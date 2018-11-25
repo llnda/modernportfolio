@@ -1,0 +1,23 @@
+// Widescreens
+@include mediaXL {
+}
+
+// Desktops & Laptops
+@include mediaL {
+}
+
+// Tablets
+@include mediaM {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+  .about-info {
+    grid-template-areas: "bioImage" "bio" "job1" "job2" "job3" "job4";
+    grid-template-columns: 1fr;
+  }
+}
+
+// Smartphones
+@include mediaS {
+}
