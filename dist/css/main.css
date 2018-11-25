@@ -160,7 +160,7 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: "bioImage bioImage bio bio" "job1 job2 job3 job4";
+  grid-template-areas: "bioImage bio bio bio" "job1 job2 job3 job4";
   grid-template-columns: repeat(4, 1fr); }
   .about-info .bio-image {
     grid-area: bioImage;
@@ -185,6 +185,35 @@ main {
     padding: 0.5rem;
     border-bottom: rgba(204, 177, 22, 0.616) 5px solid; }
 
+.project {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.7rem; }
+  .project img {
+    width: 100%;
+    border: 3px #fff solid; }
+    .project img:hover {
+      opacity: 0.5;
+      border-color: rgba(204, 177, 22, 0.616);
+      transition: all 0.7s ease-out; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: rgba(204, 177, 22, 0.616);
+    color: #000; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c5c5c5;
+  color: #333; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
@@ -192,10 +221,24 @@ main {
   color: #fff;
   height: 60px; }
 
+@media screen and (min-width: 1171px) {
+  .project {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .project {
+    grid-template-columns: repeat(3, 1fr); } }
+
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
     text-align: center; }
   .about-info {
     grid-template-areas: "bioImage" "bio" "job1" "job2" "job3" "job4";
+    grid-template-columns: 1fr; }
+  .project {
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media screen and (max-width: 500px) {
+  .project {
     grid-template-columns: 1fr; } }
